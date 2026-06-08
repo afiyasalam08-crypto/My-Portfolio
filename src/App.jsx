@@ -116,7 +116,7 @@ export default function App() {
 
     {/* Role */}
     <p className="text-xl md:text-2xl text-slate-200">
-      BCA Student • React Developer • Python Enthusiast
+      Aspiring Full Stack Developer | React Developer | Python Programmer
     </p>
 
     {/* Intro */}
@@ -173,12 +173,12 @@ export default function App() {
 
       <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-5">
         <h3 className="text-4xl font-bold text-cyan-300">3+</h3>
-        <p className="text-slate-300">Projects</p>
+        <p className="text-slate-300">Projects Built</p>
       </div>
 
       <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-5">
         <h3 className="text-4xl font-bold text-cyan-300">7+</h3>
-        <p className="text-slate-300">Skills</p>
+        <p className="text-slate-300">Technologies</p>
       </div>
 
       <div className="bg-white/10 backdrop-blur-lg rounded-2xl p-5">
@@ -245,7 +245,59 @@ export default function App() {
         </motion.div>
       </section>
 
-      <section id="skills" className="max-w-6xl mx-auto px-6 py-20">
+      <section className="max-w-6xl mx-auto px-6 py-20">
+
+<div className="text-center mb-16">
+
+<h2 className="text-5xl font-black">
+Why Hire Me?
+</h2>
+
+<div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mt-4 rounded-full"></div>
+
+</div>
+
+<div className="grid md:grid-cols-3 gap-6">
+
+<div className="bg-white/10 p-8 rounded-3xl">
+<h3 className="text-2xl font-bold mb-3">
+🚀 Fast Learner
+</h3>
+<p>
+Quickly adapts to new technologies and development environments.
+</p>
+</div>
+
+<div className="bg-white/10 p-8 rounded-3xl">
+<h3 className="text-2xl font-bold mb-3">
+💡 Problem Solver
+</h3>
+<p>
+Focused on building practical solutions to real-world challenges.
+</p>
+</div>
+
+<div className="bg-white/10 p-8 rounded-3xl">
+<h3 className="text-2xl font-bold mb-3">
+🤝 Team Player
+</h3>
+<p>
+Comfortable collaborating in team projects and agile workflows.
+</p>
+</div>
+
+</div>
+
+</section>
+
+      <motion.section
+  id="skills"
+  className="max-w-6xl mx-auto px-6 py-20"
+  initial={{ opacity: 0, y: 80 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  viewport={{ once: true }}
+>
   <div className="text-center mb-16">
   <FaReact className="mx-auto text-5xl text-cyan-300 mb-4" />
   <h2 className="text-5xl font-black">
@@ -328,7 +380,7 @@ export default function App() {
     </div>
 
   </div>
-</section>
+</motion.section>
 
 <div className="text-center mb-16">
 
@@ -368,7 +420,14 @@ export default function App() {
 
 </div>
       
-      <section id="projects" className="max-w-6xl mx-auto px-6 py-20">
+      <motion.section
+  id="projects"
+  className="max-w-6xl mx-auto px-6 py-20"
+  initial={{ opacity: 0, y: 80 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  viewport={{ once: true }}
+>
        <div className="text-center mb-16">
   <FaBriefcase className="mx-auto text-5xl text-cyan-300 mb-4" />
   <h2 className="text-5xl font-black">
@@ -378,7 +437,7 @@ export default function App() {
 </div> 
         <div className="grid md:grid-cols-3 gap-6">
           {projects.map((p)=>(
-            <div key={p.title} className="group bg-white/10 backdrop-blur-lg p-6 rounded-3xl hover:-translate-y-2 transition">
+            <div key={p.title} className="group bg-white/10 backdrop-blur-lg p-6 rounded-3xl border border-white/10 hover:-translate-y-3 hover:scale-105 hover:border-cyan-300/50 transition-all duration-300">
               <FaLaptopCode className="text-4xl mb-4"/>
               <h3 className="text-2xl font-bold">{p.title}</h3>
               <p className="text-sky-200">{p.tech}</p>
@@ -386,11 +445,15 @@ export default function App() {
             </div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
-      <section
+      <motion.section
   id="experience"
   className="max-w-6xl mx-auto px-6 py-20"
+  initial={{ opacity: 0, y: 80 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  viewport={{ once: true }}
 >
   <div className="text-center mb-16">
   <p className="uppercase tracking-[0.3em] text-cyan-300 text-sm">
@@ -443,13 +506,17 @@ export default function App() {
     </div>
 
   </div>
-</section>
+</motion.section>
 
       
 
-     <section
+     <motion.section
   id="certifications"
   className="max-w-6xl mx-auto px-6 py-20"
+  initial={{ opacity: 0, y: 80 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  viewport={{ once: true }}
 >
   <div className="text-center mb-16">
   <FaCertificate className="mx-auto text-5xl text-cyan-300 mb-4" />
@@ -502,11 +569,15 @@ export default function App() {
     </div>
 
   </div>
-</section>
+</motion.section>
 
-      <section
+      <motion.section
   id="contact"
   className="max-w-6xl mx-auto px-6 py-20"
+  initial={{ opacity: 0, y: 80 }}
+  whileInView={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, ease: "easeOut" }}
+  viewport={{ once: true }}
 >
 
   <div className="text-center mb-16">
@@ -594,7 +665,23 @@ export default function App() {
 
   </div>
 
-</section>
+</motion.section>
+
+<footer className="py-10 text-center border-t border-white/10 mt-20">
+
+<h3 className="text-xl font-bold">
+Afiya Safrin
+</h3>
+
+<p className="text-slate-400 mt-2">
+Aspiring Full Stack Developer
+</p>
+
+<p className="text-slate-500 mt-4 text-sm">
+© 2026 All Rights Reserved
+</p>
+
+</footer>
     </div>
   );
 }
