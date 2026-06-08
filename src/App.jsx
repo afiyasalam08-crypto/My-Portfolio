@@ -1,9 +1,19 @@
 import React from "react";
 import { motion } from "framer-motion";
 import {
-  FaReact, FaPython, FaGithub, FaGitAlt, FaJs, FaLaptopCode,
-  FaBriefcase, FaCertificate, FaGraduationCap,
-  FaEnvelope, FaPhone, FaMapMarkerAlt
+  FaReact,
+  FaPython,
+  FaGithub,
+  FaGitAlt,
+  FaJs,
+  FaLaptopCode,
+  FaBriefcase,
+  FaCertificate,
+  FaGraduationCap,
+  FaEnvelope,
+  FaPhone,
+  FaMapMarkerAlt,
+  FaUsers
 } from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
 
@@ -39,11 +49,13 @@ export default function App() {
 
       <nav className="fixed top-0 w-full backdrop-blur-lg bg-white/10 border-b border-white/10 z-50">
         <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between">
-          <h1 className="font-bold text-2xl">Afiya.</h1>
+          <h1 className="font-bold text-2xl">Afiya Safrin</h1>
           <div className="hidden md:flex gap-6">
             <a href="#about">About</a>
             <a href="#skills">Skills</a>
             <a href="#projects">Projects</a>
+            <a href="#experience">Experience</a>
+<a href="#certifications">Certificates</a>
             <a href="#contact">Contact</a>
           </div>
         </div>
@@ -119,12 +131,12 @@ export default function App() {
       </a>
 
       <a
-        href="/resume.pdf"
-        download
-        className="px-8 py-4 border border-white rounded-full hover:bg-white/10 transition"
-      >
-        Download Resume
-      </a>
+  href={`${import.meta.env.BASE_URL}Resume.pdf`}
+  download="Afiya_Safrin_Resume.pdf"
+  className="px-8 py-4 border border-white rounded-full hover:bg-white/10 transition"
+>
+  Download Resume
+</a>
 
     </div>
 
@@ -156,24 +168,25 @@ export default function App() {
     {/* Social Links */}
     <div className="flex justify-center gap-8 mt-10 text-3xl">
 
-      <a
-        href="https://github.com/"
-        target="_blank"
-        rel="noreferrer"
-        className="hover:text-cyan-300 transition"
-      >
-        <FaGithub />
-      </a>
+  <a
+    href="https://github.com/afiyasalam08-crypto"
+    target="_blank"
+    rel="noopener noreferrer"
+    title="GitHub Profile"
+    className="hover:text-cyan-300 transition duration-300"
+  >
+    <FaGithub />
+  </a>
 
-      <a
-        href="mailto:afisalam64@gmail.com"
-        className="hover:text-cyan-300 transition"
-      >
-        <FaEnvelope />
-      </a>
+  <a
+    href="mailto:afisalam64@gmail.com"
+    title="Send Email"
+    className="hover:text-cyan-300 transition duration-300"
+  >
+    <FaEnvelope />
+  </a>
 
-    </div>
-
+</div>
   </motion.div>
 
 </section>
@@ -289,70 +302,44 @@ export default function App() {
   </div>
 </section>
 
-<div className="mt-12 bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
-  <h3 className="text-2xl font-bold mb-6 text-center">
+<div className="text-center mb-16">
+
+  <FaUsers className="mx-auto text-5xl text-cyan-300 mb-4" />
+
+  <h3 className="text-5xl font-black">
     Soft Skills
   </h3>
 
-  <div className="grid md:grid-cols-3 gap-4">
-    {[
-      "Communication",
-      "Problem Solving",
-      "Quick Learning",
-      "Team Collaboration",
-      "Time Management",
-      "Adaptability",
-    ].map((skill) => (
-      <div
-        key={skill}
-        className="bg-white/10 rounded-xl p-4 text-center hover:bg-white/20 transition"
-      >
-        {skill}
-      </div>
-    ))}
-  </div>
+  <div className="w-20 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mt-3 rounded-full"></div>
+
 </div>
 
-      <section className="max-w-6xl mx-auto px-6 py-20">
+<div className="grid md:grid-cols-3 gap-4 mt-12">
 
-  <div className="text-center mb-16">
-    <p className="uppercase tracking-[0.3em] text-cyan-300 text-sm">
-      Communication
-    </p>
+  {[
+    { icon: "💬", title: "Communication" },
+    { icon: "🧩", title: "Problem Solving" },
+    { icon: "🚀", title: "Quick Learning" },
+    { icon: "🤝", title: "Team Collaboration" },
+    { icon: "⏳", title: "Time Management" },
+    { icon: "🔄", title: "Adaptability" },
+  ].map((skill) => (
+    <div
+      key={skill.title}
+      className="group bg-gradient-to-br from-sky-500/10 to-cyan-500/10 border border-cyan-300/20 rounded-xl py-3 px-2 text-center hover:-translate-y-2 hover:border-cyan-400/50 transition duration-300"
+    >
+      <div className="text-2xl mb-2 group-hover:scale-110 transition">
+        {skill.icon}
+      </div>
 
-    <h2 className="text-5xl font-black mt-2">
-      Languages & Communication
-    </h2>
-
-    <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mt-4 rounded-full"></div>
-  </div>
-
-  <div className="grid md:grid-cols-4 gap-6">
-
-    <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 text-center border border-white/20 hover:-translate-y-2 transition">
-      <h3 className="text-2xl font-bold text-cyan-300">Tamil</h3>
-      <p className="text-slate-300 mt-2">Native Proficiency</p>
+      <h4 className="text-sm font-semibold">
+        {skill.title}
+      </h4>
     </div>
+  ))}
 
-    <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 text-center border border-white/20 hover:-translate-y-2 transition">
-      <h3 className="text-2xl font-bold text-cyan-300">English</h3>
-      <p className="text-slate-300 mt-2">Professional Working</p>
-    </div>
-
-    <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 text-center border border-white/20 hover:-translate-y-2 transition">
-      <h3 className="text-2xl font-bold text-cyan-300">French</h3>
-      <p className="text-slate-300 mt-2">Basic Knowledge</p>
-    </div>
-
-    <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 text-center border border-white/20 hover:-translate-y-2 transition">
-      <h3 className="text-2xl font-bold text-cyan-300">Hindi</h3>
-      <p className="text-slate-300 mt-2">Basic Knowledge</p>
-    </div>
-
-  </div>
-
-</section>
-
+</div>
+      
       <section id="projects" className="max-w-6xl mx-auto px-6 py-20">
        <div className="text-center mb-16">
   <FaBriefcase className="mx-auto text-5xl text-cyan-300 mb-4" />
@@ -373,7 +360,10 @@ export default function App() {
         </div>
       </section>
 
-      <section className="max-w-6xl mx-auto px-6 py-20">
+      <section
+  id="experience"
+  className="max-w-6xl mx-auto px-6 py-20"
+>
   <div className="text-center mb-16">
   <p className="uppercase tracking-[0.3em] text-cyan-300 text-sm">
     Experience
@@ -427,83 +417,12 @@ export default function App() {
   </div>
 </section>
 
-      <section className="max-w-6xl mx-auto px-6 py-20">
-  <div className="text-center mb-16">
-  <FaGraduationCap className="mx-auto text-5xl text-cyan-300 mb-4" />
-  <h2 className="text-5xl font-black">
-    Education
-  </h2>
-  <div className="w-24 h-1 bg-gradient-to-r from-cyan-400 to-blue-500 mx-auto mt-4 rounded-full"></div>
-</div>
+      
 
-  <div className="relative border-l-4 border-sky-400 ml-4">
-
-    <div className="mb-12 ml-8">
-      <div className="absolute w-5 h-5 bg-sky-400 rounded-full -left-[11px]" />
-
-      <h3 className="text-2xl font-bold">
-        Bachelor of Computer Applications (BCA)
-      </h3>
-
-      <p className="text-sky-200 text-lg">
-        Jamal Mohamed College, Tiruchirappalli
-      </p>
-
-      <p className="text-slate-300">
-        2024 - Present
-      </p>
-
-      <p className="mt-3 text-slate-200">
-        Pursuing a Bachelor's degree in Computer Applications with a focus on
-        programming, web development, software engineering, databases,
-        and emerging technologies.
-      </p>
-    </div>
-
-    <div className="mb-12 ml-8">
-      <div className="absolute w-5 h-5 bg-sky-400 rounded-full -left-[11px]" />
-
-      <h3 className="text-2xl font-bold">
-        Higher Secondary Education (12th)
-      </h3>
-
-      <p className="text-sky-200">
-        Imam Gazzali Matric Hr. Sec. School, Lalpet
-      </p>
-
-      <p className="text-slate-300">
-        2023 - 2024
-      </p>
-
-      <p className="text-green-300 font-semibold mt-2">
-        Percentage: 83.5%
-      </p>
-    </div>
-
-    <div className="ml-8">
-      <div className="absolute w-5 h-5 bg-sky-400 rounded-full -left-[11px]" />
-
-      <h3 className="text-2xl font-bold">
-        SSLC (10th)
-      </h3>
-
-      <p className="text-sky-200">
-        Aided Muslim High School, Ayangudi
-      </p>
-
-      <p className="text-slate-300">
-        2021 - 2022
-      </p>
-
-      <p className="text-green-300 font-semibold mt-2">
-        Percentage: 83.6%
-      </p>
-    </div>
-
-  </div>
-</section>
-
-      <section className="max-w-6xl mx-auto px-6 py-20">
+     <section
+  id="certifications"
+  className="max-w-6xl mx-auto px-6 py-20"
+>
   <div className="text-center mb-16">
   <FaCertificate className="mx-auto text-5xl text-cyan-300 mb-4" />
   <h2 className="text-5xl font-black">
@@ -600,28 +519,50 @@ export default function App() {
         Email
       </h3>
 
-      <p className="text-slate-300 break-all">
-        afisalam64@gmail.com
-      </p>
+      <a
+  href="mailto:afisalam64@gmail.com"
+  className="inline-flex items-center gap-2 text-slate-300 hover:text-cyan-300 transition"
+>
+  <FaEnvelope />
+  afisalam64@gmail.com
+</a>
 
     </div>
 
     <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 text-center hover:-translate-y-2 transition">
 
-      <FaMapMarkerAlt className="mx-auto text-5xl text-cyan-300 mb-5" />
+  <FaGithub className="mx-auto text-5xl text-cyan-300 mb-5" />
 
-      <h3 className="text-2xl font-bold mb-3">
-        Location
-      </h3>
+  <h3 className="text-2xl font-bold mb-3">
+    GitHub
+  </h3>
 
-      <p className="text-slate-300">
-        Ayangudi,
-        Kattumannarkoil Taluk,
-        Cuddalore District,
-        Tamil Nadu
-      </p>
+  <a
+    href="https://github.com/afiyasalam08-crypto"
+    target="_blank"
+    rel="noopener noreferrer"
+    className="text-slate-300 hover:text-cyan-300"
+  >
+    github.com/afiyasalam08-crypto
+  </a>
 
-    </div>
+</div>
+
+    <div className="md:col-span-3 flex justify-center">
+  <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20 text-center hover:-translate-y-2 transition w-full max-w-md">
+
+    <FaMapMarkerAlt className="mx-auto text-5xl text-cyan-300 mb-5" />
+
+    <h3 className="text-2xl font-bold mb-3">
+      Location
+    </h3>
+
+    <p className="text-slate-300">
+      Cuddalore District, Tamil Nadu
+    </p>
+
+  </div>
+</div>
 
   </div>
 
