@@ -16,8 +16,11 @@ import {
   FaUsers
 } from "react-icons/fa";
 import { SiTailwindcss } from "react-icons/si";
+import { FaBars } from "react-icons/fa";
+import { useState } from "react";
 
 export default function App() {
+  const [menuOpen, setMenuOpen] = useState(false);
   const skills = [
     "HTML","CSS","JavaScript","React",
     "Python","Git","GitHub","VS Code","UiPath Studio"
@@ -48,18 +51,43 @@ export default function App() {
       <div className="fixed bottom-0 right-0 w-[500px] h-[500px] bg-cyan-200/10 blur-[180px] rounded-full -z-10" />
 
       <nav className="fixed top-0 w-full backdrop-blur-lg bg-white/10 border-b border-white/10 z-50">
-        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between">
-          <h1 className="font-bold text-2xl">Afiya Safrin</h1>
-          <div className="hidden md:flex gap-6">
-            <a href="#about">About</a>
-            <a href="#skills">Skills</a>
-            <a href="#projects">Projects</a>
-            <a href="#experience">Experience</a>
-<a href="#certifications">Certificates</a>
-            <a href="#contact">Contact</a>
-          </div>
-        </div>
-      </nav>
+  <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+
+    <h1 className="font-bold text-2xl">
+      Afiya Safrin
+    </h1>
+
+    {/* Desktop Menu */}
+    <div className="hidden md:flex gap-6">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certificate</a>
+      <a href="#contact">Contact</a>
+    </div>
+
+    {/* Mobile Menu Button */}
+    <button
+      className="md:hidden text-2xl"
+      onClick={() => setMenuOpen(!menuOpen)}
+    >
+      <FaBars />
+    </button>
+  </div>
+
+  {/* Mobile Menu */}
+  {menuOpen && (
+    <div className="md:hidden flex flex-col gap-4 px-6 pb-4 bg-slate-900/95">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#certifications">Certificate</a>
+      <a href="#contact">Contact</a>
+    </div>
+  )}
+</nav>
 
       <section className="min-h-[90vh] flex items-center justify-center relative px-6 pt-24">
 
